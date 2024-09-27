@@ -9,10 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
                 document.getElementById("typewriter").innerHTML += text.charAt(i);
                 i++;
                 setTimeout(typeWriter, speed);
-                
-                // Bloom the flower
-                let progress = i / text.length;
-                gsap.to(".petal", {scale: progress, opacity: progress, duration: 0.1});
             }
         }
 

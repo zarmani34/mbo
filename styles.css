@@ -1,146 +1,155 @@
-/* General Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Cursive', serif;
-    background-color: #f5f5f5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background: url('background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap");
 
-.hero {
-    text-align: center;
-    color: #333;
-    position: relative;
-    padding: 20px;
-    max-width: 1000px;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Lora", serif;
+  background-color: #f9f7f1;
+  color: #3a3a3a;
+  overflow-x: hidden;
 }
-
-.profile-pic {
-    border-radius: 50%;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+header {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+}
+h1 {
+  font-size: 2.5em;
+  color: #d4a373;
+}
+.book {
+  background-color: #fefae0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.book-cover {
+  width: 150px;
+  height: 200px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  background-color: #d4a373;
+  color: #fefae0;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background-image: url("pic3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.book-cover:hover {
+  transform: scale(1.05);
+}
+.story-content {
+  display: none;
+  margin-top: 20px;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+.message {
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: block;
+  object-fit: cover;
+  border: 5px solid #d4a373;
+}
+.writing-section {
+  background-color: #faedcd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.icon {
+  font-size: 2em;
+  color: #d4a373;
+  margin-bottom: 10px;
+}
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+  color: #6c757d;
+}
+#typewriter {
+  min-height: 150px;
+  position: relative;
+}
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #d4a373;
+}
+.flower {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .book-cover {
+    width: 120px;
+    height: 160px;
+  }
+  .profile-picture {
     width: 150px;
     height: 150px;
-    object-fit: cover;
-    border: 5px solid #ff4081;
-    margin-bottom: 20px;
-}
-
-.typewriter {
-    font-size: 2.5em;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-.message {
-    font-size: 1.3em;
-    margin-top: 15px;
-    color: #444;
-}
-
-/* Gallery Section */
-.gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item {
-    position: relative;
-}
-
-.gallery-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.caption {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-/* Writing Pad */
-.writing-pad {
-    text-align: center;
-    margin: 30px auto;
-    width: 80%;
-}
-
-textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid #333;
-    font-size: 1.2em;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* Poem Section */
-.poem-content {
-    margin: 40px auto;
-    text-align: center;
-    font-size: 1.5em;
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .typewriter {
-        font-size: 2em;
-    }
-
-    .profile-pic {
-        width: 100px;
-        height: 100px;
-    }
-
-    .message {
-        font-size: 1em;
-    }
-
-    .poem-content {
-        font-size: 1.2em;
-    }
-
-    textarea {
-        font-size: 1em;
-    }
-}
-.flower-animation {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.petal {
-    position: absolute;
-    width: 20px;
-    height: 100px;
-    background-color: pink;
-    border-radius: 50%;
-    opacity: 0;
-    transform: scale(0);
-    transition: all 1s ease;
+  }
 }
